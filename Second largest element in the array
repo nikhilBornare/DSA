@@ -1,0 +1,36 @@
+/*Problem statement
+
+You have been given an array/list 'ARR' of integers. Your task is to find the second largest element present in the 'ARR'.
+
+Note:
+a) Duplicate elements may be present.
+
+b) If no such element is present return -1.
+Example:
+Input: Given a sequence of five numbers 2, 4, 5, 6, 8.
+
+Output:  6 */
+
+import java.util.*;
+import java.io.*;
+
+public class Solution {
+	public static int findSecondLargest(int n, int[] arr) {
+
+		int FirstLargest = Integer.MIN_VALUE;
+		int SecondLargest = Integer.MIN_VALUE;
+		for (int i = 0; i < n; i++) {
+			if (FirstLargest < arr[i]) {
+				SecondLargest = FirstLargest;
+				FirstLargest = arr[i];
+			} else if (FirstLargest > arr[i] && SecondLargest < arr[i]) {
+				SecondLargest = arr[i];
+			}
+		}
+		if (SecondLargest == Integer.MIN_VALUE) {
+			return -1; // No valid second-largest element
+		} else {
+			return SecondLargest;
+		}
+	}
+}
