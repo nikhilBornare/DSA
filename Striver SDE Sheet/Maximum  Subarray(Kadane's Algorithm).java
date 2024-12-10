@@ -26,7 +26,6 @@ class Solution {
                 currSum = 0;
             }
         }
-
         // Return the maximum subarray sum
         return maxSum;
     }
